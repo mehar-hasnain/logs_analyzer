@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calo Balance Log Analytics — Report</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    h1, h2 { margin: 0.4em 0; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .card { background: #fafafa; padding: 16px; border-radius: 12px; border: 1px solid #eee; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; font-size: 14px; }
+    code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; }
+    .section { margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <h1>Calo Balance Log Analytics</h1>
+  <div class="cards">
+    <div class="card"><b>Total transactions</b><div style="font-size: 28px">16300</div></div>
+    <div class="card"><b>Unique users</b><div style="font-size: 28px">784</div></div>
+    <div class="card"><b>Total debit</b><div style="font-size: 24px">712505.70</div></div>
+    <div class="card"><b>Total credit</b><div style="font-size: 24px">514991.77</div></div>
+  </div>
+
+  <div class="section">
+    <h2>Charts</h2>
+    <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>                <div id="0fda657e-0f84-4b0a-8bef-c940f38aac9e" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0fda657e-0f84-4b0a-8bef-c940f38aac9e")) {                    Plotly.newPlot(                        "0fda657e-0f84-4b0a-8bef-c940f38aac9e",                        [{"x":["CREDIT","DEBIT"],"y":[514991.771,712505.703],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"title":{"text":"Total Amount by Type"}},                        {"responsive": true}                    )                };                            </script>        </div>
+    <div>                            <div id="93c88ab3-a626-46aa-ba59-b0a58b7717eb" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("93c88ab3-a626-46aa-ba59-b0a58b7717eb")) {                    Plotly.newPlot(                        "93c88ab3-a626-46aa-ba59-b0a58b7717eb",                        [{"x":["60cddb49-50de-43ce-89fc-c6dd1ce17c41","4ab67531-e103-4b29-92d6-246927bd64a0","80308098-8d24-4be6-96c2-f4c2c5e03699","073d8401-e882-4dc0-a104-c212f6019ebd","8b293101-dfef-43ed-9095-ac05a1507d34","fdc31437-bc6b-4405-ae92-d44a63ac763d","813ee3cd-2349-43ae-8915-f0a2c12b4245","f50d0778-fab9-47c1-bf7d-a23e9649e127"],"y":[113043.48,5250.0,1739.13,744.78,81.818,50.0,9.091,9.091],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"title":{"text":"Top Overdraft Users (sum of amounts)"}},                        {"responsive": true}                    )                };                            </script>        </div>
+    <div>                            <div id="0e07fff4-1628-4919-a1b1-832a7c0b2f36" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0e07fff4-1628-4919-a1b1-832a7c0b2f36")) {                    Plotly.newPlot(                        "0e07fff4-1628-4919-a1b1-832a7c0b2f36",                        [{"mode":"lines+markers","x":["2023-12-12","2023-12-13","2023-12-14","2023-12-15","2023-12-16","2023-12-17","2023-12-18","2023-12-19","2023-12-20","2023-12-21","2023-12-22","2023-12-23","2023-12-24","2023-12-25","2023-12-26","2023-12-27","2023-12-29","2023-12-30","2023-12-31","2024-01-01","2024-01-02","2024-01-03","2024-01-04","2024-01-05","2024-01-06","2024-01-07","2024-01-08","2024-01-09","2024-01-10","2024-01-11","2024-01-12","2024-01-13","2024-01-14","2024-01-15","2024-01-16","2024-01-17","2024-01-18","2024-01-19","2024-01-20","2024-01-21","2024-01-22","2024-01-23","2024-01-24","2024-01-25","2024-01-26","2024-01-27","2024-01-28","2024-01-29","2024-01-30","2024-01-31","2024-02-01","2024-02-02","2024-02-03","2024-02-04","2024-02-05","2024-02-06","2024-02-07","2024-02-08","2024-02-09","2024-02-10","2024-02-11","2024-02-12","2024-02-13","2024-02-14","2024-02-15","2024-02-16","2024-02-17","2024-02-18","2024-02-19","2024-02-20","2024-02-21","2024-02-22","2024-02-23","2024-02-24","2024-02-25","2024-02-26","2024-02-27","2024-02-28","2024-02-29","2024-03-01","2024-03-02","2024-03-03","2024-03-04","2024-03-05","2024-03-06","2024-03-07","2024-03-08","2024-03-09","2024-03-10","2024-03-11","2024-03-12","2024-03-13","2024-03-14","2024-03-17","2024-03-18","2024-03-19","2024-03-20","2024-03-21","2024-03-22","2024-03-23","2024-03-24","2024-03-25","2024-03-26","2024-03-27","2024-03-28","2024-03-29","2024-03-30","2024-03-31","2024-04-01","2024-04-02","2024-04-03","2024-04-04","2024-04-07","2024-04-08","2024-04-09","2024-04-10","2024-04-12","2024-04-13","2024-04-14","2024-04-15","2024-04-16","2024-04-17","2024-04-18","2024-04-19","2024-04-20","2024-04-21","2024-04-22","2024-04-23","2024-04-24","2024-04-25","2024-04-26","2024-04-27","2024-04-28","2024-04-29","2024-04-30","2024-05-01","2024-05-02","2024-05-03","2024-05-04","2024-05-05","2024-05-06","2024-05-07","2024-05-08","2024-05-09","2024-05-10","2024-05-11","2024-05-12","2024-05-13","2024-05-14","2024-05-15","2024-05-16","2024-05-17","2024-05-18","2024-05-19","2024-05-20","2024-05-21","2024-05-22","2024-05-23"],"y":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-3609.6,-74.75,0.0,0.0,0.0,0.0,0.0,4141.797,8471.794999999998,-2984.364,-2856.654,1995.9,-2589.277,-6445.75,863.3,-829.8460000000001,-4035.8,-4233.3,-4381.802000000001,-1321.6999999999998,-3678.229,73.5,-684.0,-2433.727,-2963.727,-2576.027,935.0,6572.099999999999,-671.5,-1119.6,-748.364,-2535.7,-1502.864,-1193.0639999999999,-4208.725,-657.3,4969.318,-6785.227,-6593.068,-1412.5590000000002,-6572.565,-6617.528,-743.5,-565.982,-6202.768,-6264.519,-4829.837,1537.04,-10312.773,-1545.4,4613.347,-5665.955,-2045.5699999999997,-2976.505000000001,-5560.955,-6422.355,-852.5999999999999,-1504.564,-3818.291,-6061.369,4341.709000000001,-5681.991,-5480.991,9317.230000000001,-2667.464,-5158.127,-4711.727,6848.391,-767.7090000000007,-5439.663,-651.2,-1650.982,5514.009,-4261.7,-4459.505,-4910.527,-4893.909,623.5999999999999,42537.4,-5103.559,-4771.145,22381.527,-997.7240000000002,2452.196,-5592.455,-6183.291,-11315.564,-5248.441000000001,-6235.796,-592.355,7027.811999999998,-5137.691,-4964.291,-5200.329,-842.4110000000001,-3995.282,1834.818,248.2779999999998,1903.473,438.5540000000001,-361.5,-200.0,-313.5,-395.5,-192.3,24.56600000000003,-172.85399999999998,6206.687,-421.2000000000003,-628.78,-768.28,2096.901,3867.55,-1591.29,-782.5190000000002,626.338,-1503.08,-1565.83,1143.8070000000002,-3589.4360000000006,-107504.92199999999,-139.409,-902.636,-1823.8,-2100.4500000000003,-3623.1899999999987,-2165.23,-1723.574,10335.786,7259.688,295.2460000000001,-3168.76,41742.937999999995,5770.206000000001,18289.066,6981.166000000001,252.42600000000039,-6934.84,-7107.25,-7621.88,-4145.778,-7143.080000000001,-1189.55,-3662.59],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"title":{"text":"Daily Net Flow (Credit - Debit)"}},                        {"responsive": true}                    )                };                            </script>        </div>
+  </div>
+
+  <div class="section">
+    <h2>Top Issues</h2>
+    <h3>Overdrafts (Top 10)</h3>
+    <table>
+      <thead><tr><th>Timestamp</th><th>User</th><th>Tx ID</th><th>Amount</th><th>Old Balance</th><th>Overdraft</th></tr></thead>
+      <tbody>
+      
+        <tr><td>2024-04-30 13:49:11.457000+00:00</td><td><code>60cddb49-50de-43ce-89fc-c6dd1ce17c41</code></td><td><code>01HWQM8DYW9JWT6F8Y4PWSTT32</code></td><td>113043.48</td><td>9672.39</td><td>-103371.09</td></tr>
+      
+        <tr><td>2024-02-15 14:42:21.579000+00:00</td><td><code>4ab67531-e103-4b29-92d6-246927bd64a0</code></td><td><code>01HPPKFWBMDN52VNPWPK3GAY0Z</code></td><td>5250.0</td><td>4590.0</td><td>-660.0</td></tr>
+      
+        <tr><td>2024-04-21 12:24:19.176000+00:00</td><td><code>80308098-8d24-4be6-96c2-f4c2c5e03699</code></td><td><code>01HW09TGMM42BW1G8G58YH63R4</code></td><td>1739.13</td><td>1607.84</td><td>-131.29</td></tr>
+      
+        <tr><td>2024-03-28 16:32:47.304000+00:00</td><td><code>073d8401-e882-4dc0-a104-c212f6019ebd</code></td><td><code>01HT2YG6WVRXKNJ8QWKWHZ14AR</code></td><td>744.78</td><td>510.0</td><td>-234.78</td></tr>
+      
+        <tr><td>2024-04-04 14:16:06.163000+00:00</td><td><code>8b293101-dfef-43ed-9095-ac05a1507d34</code></td><td><code>01HTMQF0K3GXJPVWND92NDPQ8N</code></td><td>81.818</td><td>60.181</td><td>-21.637</td></tr>
+      
+        <tr><td>2024-05-14 22:37:12.949000+00:00</td><td><code>fdc31437-bc6b-4405-ae92-d44a63ac763d</code></td><td><code>01HXWM18Q8FNB2KD6WMM3QGPTK</code></td><td>50.0</td><td>40.091</td><td>-9.909</td></tr>
+      
+        <tr><td>2024-05-09 12:26:32.298000+00:00</td><td><code>813ee3cd-2349-43ae-8915-f0a2c12b4245</code></td><td><code>01HXEN3FY5NC2YNSN4XP7P54QG</code></td><td>9.091</td><td>1.0</td><td>-8.091</td></tr>
+      
+        <tr><td>2024-04-25 12:12:21.872000+00:00</td><td><code>f50d0778-fab9-47c1-bf7d-a23e9649e127</code></td><td><code>01HWAJQH8PBBRQS0A7CJ5VNCKC</code></td><td>9.091</td><td>0.0</td><td>-9.091</td></tr>
+      
+      </tbody>
+    </table>
+   
+
+    <h3>Anomalies (sample)</h3>
+    <table>
+      <thead><tr><th>Timestamp</th><th>User</th><th>Tx ID</th><th>Type</th><th>Source</th><th>Action</th><th>Amount</th><th>Old Balance</th><th>New Balance</th><th>Flags</th><th>Description</th></tr></thead>
+      <tbody>
+      
+        <tr>
+          <td>2024-05-23 10:39:21.255000+00:00</td>
+          <td><code>2453c8d3-979f-4326-9c5a-b55bb7c3c11d</code></td>
+          <td><code>01HYJGHBH21WD5F133YEYMTNBA</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>INVAILID_ENTRY</td>
+          <td>500.0</td>
+          <td>500.0</td>
+          <td>0.0</td>
+          <td>InvalidAction</td>
+          <td>Action contains 'INVALID'</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-23 10:35:22.566000+00:00</td>
+          <td><code>3fdd83da-07e3-4d8b-9f15-5209b69929c0</code></td>
+          <td><code>01HYJGA2M73QYFSBVYJ45FMAC3</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>INVAILID_ENTRY</td>
+          <td>1800.0</td>
+          <td>1800.0</td>
+          <td>0.0</td>
+          <td>InvalidAction</td>
+          <td>Action contains 'INVALID'</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-22 11:26:38.321000+00:00</td>
+          <td><code>097b9be0-6c77-4598-929b-68052b3bdf7a</code></td>
+          <td><code>01HYG0V6XY4FGZNPN7H1PQEQ3M</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>INVAILID_ENTRY</td>
+          <td>180.0</td>
+          <td>180.0</td>
+          <td>0.0</td>
+          <td>InvalidAction</td>
+          <td>Action contains 'INVALID'</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-22 11:19:32.539000+00:00</td>
+          <td><code>5aa350d0-c07b-42f3-a006-f8814c70764f</code></td>
+          <td><code>01HYG0E5GB66JF97PPD8NT23FT</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>INVAILID_ENTRY</td>
+          <td>50.0</td>
+          <td>50.0</td>
+          <td>0.0</td>
+          <td>InvalidAction</td>
+          <td>Action contains 'INVALID'</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-21 21:01:11.952000+00:00</td>
+          <td><code>1be789f1-54d2-40d3-93f1-afac8e3d647a</code></td>
+          <td><code>01HYEFAEF6F7X3ZPAMEG2AS470</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DELIVERY_DEDUCTION</td>
+          <td>4.0</td>
+          <td>156.75</td>
+          <td>152.75</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 13.33 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-21 15:39:09.826000+00:00</td>
+          <td><code>6f9db617-31c6-4072-bfef-08d04f27b73a</code></td>
+          <td><code>01HYDWWWG42W0W3R05PC2X4JMD</code></td>
+          <td>CREDIT</td>
+          <td>PAYMENT</td>
+          <td>REPLACE_FOOD</td>
+          <td>100.0</td>
+          <td>93.091</td>
+          <td>184.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 225.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 21:01:16.993000+00:00</td>
+          <td><code>1a9b77f5-4b26-410e-a367-75ecefaff3b3</code></td>
+          <td><code>01HYBWXZVQ78R2VRSVQ3DT7ZAE</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DELIVERY_DEDUCTION</td>
+          <td>9.0</td>
+          <td>144.5</td>
+          <td>135.5</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 9.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 21:01:13.285000+00:00</td>
+          <td><code>1be789f1-54d2-40d3-93f1-afac8e3d647a</code></td>
+          <td><code>01HYBWXS7XH9FHRHK0CSZ87H1P</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DELIVERY_DEDUCTION</td>
+          <td>4.0</td>
+          <td>160.75</td>
+          <td>156.75</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 13.33 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 18:20:15.883000+00:00</td>
+          <td><code>9e652ba2-e1f3-4c64-a256-7bc39337e0ca</code></td>
+          <td><code>01HYBKQ380BEDXW63XTNBPTCMA</code></td>
+          <td>CREDIT</td>
+          <td>PAYMENT</td>
+          <td>RENEW_SUBSCRIPTION</td>
+          <td>49.601</td>
+          <td>4.908</td>
+          <td>50.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 41.57 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 11:55:50.897000+00:00</td>
+          <td><code>f3c2d57e-6d8e-47be-9a08-af74bea1d842</code></td>
+          <td><code>01HYAXQ6W22JADM747V30PQDB4</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>FIXING_BALANCE</td>
+          <td>243.0</td>
+          <td>243.5</td>
+          <td>0.5</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 936.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:54:03.433000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYACENZ14KD9E6DBKYBKKRRX</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>9.091</td>
+          <td>109.091</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 19.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:53:14.698000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYACD65RJFGB6DVKAEDTPF51</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>REMOVING_GIFTS</td>
+          <td>101.291</td>
+          <td>101.291</td>
+          <td>0.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 92.29 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:50:59.550000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYAC920KYY5JAABT6ZGP5RJ6</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>1.291</td>
+          <td>101.291</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 19.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:50:59.550000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYAC920KYY5JAABT6ZGP5RJ6</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>1.291</td>
+          <td>101.291</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:50:59.473000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYAC91PM87QYK44KQNGNM24A</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>REMOVE</td>
+          <td>85.801</td>
+          <td>87.092</td>
+          <td>1.291</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 76.80 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:44:56.122000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABXZ4G19YJF6B8ZT6TPD69</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:44:56.122000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABXZ4G19YJF6B8ZT6TPD69</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 19.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:44:55.682000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABXZ0JHZQKFM7958D44W0E</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>REMOVE</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 9.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:44:09.773000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABWHXFANNN8X0KEHFSQJ9J</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>CREDIT_TRANSFER</td>
+          <td>100.0</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 91.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:41:19.890000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABQBZXX2SVN0N8V05QMVXC</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>110.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:41:19.890000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABQBZXX2SVN0N8V05QMVXC</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>110.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 21.20 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:41:19.295000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABQBJTCVJGHHSAPMP7PJ5M</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>REMOVE</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 9.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:37:26.622000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABG88QGVEXQ27QSCEXXXJ1</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>REFUNDED_MANUALLY</td>
+          <td>100.0</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 91.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:36:56.880000+00:00</td>
+          <td><code>77c9c91b-d813-4b25-95ce-b0973137e030</code></td>
+          <td><code>01HYABFA30VJ570GE8NQSC755Y</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>38.2</td>
+          <td>138.2</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:36:56.726000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABF8VM2N5B1Q22ADAX8HFK</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 19.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:36:55.325000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYABF82FVWA0QPEAA8MMVT88</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>REMOVE</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 9.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-20 06:11:28.826000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HYAA0MRV9ZCNQQTXMQRF8RX3</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DOUBLE_ENTRY</td>
+          <td>80.7</td>
+          <td>80.7</td>
+          <td>0.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 71.70 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-19 21:01:19.818000+00:00</td>
+          <td><code>1a9b77f5-4b26-410e-a367-75ecefaff3b3</code></td>
+          <td><code>01HY9AH3YNA3T1WR38P8YF91HJ</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DELIVERY_DEDUCTION</td>
+          <td>7.5</td>
+          <td>152.0</td>
+          <td>144.5</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 6.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-19 21:01:10.945000+00:00</td>
+          <td><code>1be789f1-54d2-40d3-93f1-afac8e3d647a</code></td>
+          <td><code>01HY9AH01HJ7QZ0VYAH15MK8S3</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DELIVERY_DEDUCTION</td>
+          <td>4.0</td>
+          <td>164.75</td>
+          <td>160.75</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 13.33 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-19 21:01:10.114000+00:00</td>
+          <td><code>9052e976-94c8-402e-b21f-6b75f2b7df41</code></td>
+          <td><code>01HY9AGZE9PSTWC2YAPKR2NMYJ</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DELIVERY_DEDUCTION</td>
+          <td>11.0</td>
+          <td>175.318</td>
+          <td>164.318</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 13.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-19 13:56:41.249000+00:00</td>
+          <td><code>1be789f1-54d2-40d3-93f1-afac8e3d647a</code></td>
+          <td><code>01HY8J7RD7JZ7CWNC5HYXSA7V8</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DOUBLE_ENTRY</td>
+          <td>100.0</td>
+          <td>264.75</td>
+          <td>164.75</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 242.67 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-18 21:01:08.891000+00:00</td>
+          <td><code>1a9b77f5-4b26-410e-a367-75ecefaff3b3</code></td>
+          <td><code>01HY6R48SW3ET9ZTWRYZQ89JEG</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DELIVERY_DEDUCTION</td>
+          <td>33.0</td>
+          <td>185.0</td>
+          <td>152.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 57.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-18 12:11:09.777000+00:00</td>
+          <td><code>1a9b77f5-4b26-410e-a367-75ecefaff3b3</code></td>
+          <td><code>01HY5SSTK6DW3KJJYZJ4R9BTBR</code></td>
+          <td>CREDIT</td>
+          <td>PAYMENT</td>
+          <td>RENEW_SUBSCRIPTION</td>
+          <td>198.0</td>
+          <td>5.0</td>
+          <td>185.0</td>
+          <td>ContinuityBreak</td>
+          <td>Old balance does not match previous new balance</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-17 21:01:09.873000+00:00</td>
+          <td><code>bd05066f-97f4-4b07-930b-740ac832a996</code></td>
+          <td><code>01HY45QJZDN56PS9RAVJ12KWTV</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>DELIVERY_DEDUCTION</td>
+          <td>9.0</td>
+          <td>91.0</td>
+          <td>82.0</td>
+          <td>RapidManualDeduction</td>
+          <td>Repeated manual DEBIT within 60.0s</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 16:29:05.360000+00:00</td>
+          <td><code>68c3122c-7318-4e51-aee3-37ce3f855c6a</code></td>
+          <td><code>01HY13RQ2WSCW5NA26112SQNZ3</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>INVAILID_ENTRY</td>
+          <td>22.727</td>
+          <td>30.0</td>
+          <td>7.273</td>
+          <td>InvalidAction</td>
+          <td>Action contains 'INVALID'</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 16:29:05.360000+00:00</td>
+          <td><code>68c3122c-7318-4e51-aee3-37ce3f855c6a</code></td>
+          <td><code>01HY13RQ2WSCW5NA26112SQNZ3</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>INVAILID_ENTRY</td>
+          <td>22.727</td>
+          <td>30.0</td>
+          <td>7.273</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 18.30 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 16:28:31.073000+00:00</td>
+          <td><code>68c3122c-7318-4e51-aee3-37ce3f855c6a</code></td>
+          <td><code>01HY13QM0K8FRMHNFV5T8X88WB</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>INVAILID_ENTRY</td>
+          <td>150.0</td>
+          <td>180.0</td>
+          <td>30.0</td>
+          <td>InvalidAction</td>
+          <td>Action contains 'INVALID'</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 16:28:31.073000+00:00</td>
+          <td><code>68c3122c-7318-4e51-aee3-37ce3f855c6a</code></td>
+          <td><code>01HY13QM0K8FRMHNFV5T8X88WB</code></td>
+          <td>DEBIT</td>
+          <td>MANUAL_DEDUCTION</td>
+          <td>INVAILID_ENTRY</td>
+          <td>150.0</td>
+          <td>180.0</td>
+          <td>30.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 188.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 13:29:59.362000+00:00</td>
+          <td><code>77c9c91b-d813-4b25-95ce-b0973137e030</code></td>
+          <td><code>01HY0SGPKG5ZDR57VVHP199XXQ</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 13:29:59.049000+00:00</td>
+          <td><code>5cf444b8-09b4-4a03-b22d-f3141a817dd8</code></td>
+          <td><code>01HY0SGNWY6416KBFW2X878W4A</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 19.00 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 13:29:58.982000+00:00</td>
+          <td><code>2ffdc38a-1913-43eb-83f3-406f745b2831</code></td>
+          <td><code>01HY0SGPA0RYSSJ29MZD9DXWYH</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>99.0</td>
+          <td>199.0</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 13:22:55.928000+00:00</td>
+          <td><code>d1dd9965-7990-42dd-9b87-0012f71f3dcd</code></td>
+          <td><code>01HY0S3T371890KDEGA0N59MH8</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>1000.0</td>
+          <td>0.0</td>
+          <td>1000.0</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 13:22:55.753000+00:00</td>
+          <td><code>6f19e21c-ef6b-4f56-9d4d-9f17262be110</code></td>
+          <td><code>01HY0S3SS09GM23RGTYHY2H4C2</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>52.0</td>
+          <td>152.0</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 13:22:55.612000+00:00</td>
+          <td><code>b8676c53-2f66-413d-b9ce-4f4597eba73f</code></td>
+          <td><code>01HY0S3SCX840KVB1D2M0N7N38</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>1000.0</td>
+          <td>3218.23</td>
+          <td>4218.23</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 09:12:39.864000+00:00</td>
+          <td><code>face7bee-4afe-4d4e-932f-778190df3e54</code></td>
+          <td><code>01HY0ASHZC8060320878SQE626</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 09:12:39.864000+00:00</td>
+          <td><code>face7bee-4afe-4d4e-932f-778190df3e54</code></td>
+          <td><code>01HY0ASHZC8060320878SQE626</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>MADSpike</td>
+          <td>MAD z-score 6.19 >= 6.0</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 09:12:39.738000+00:00</td>
+          <td><code>67c42c0a-38dc-4917-b323-f8e7e0a5e9cb</code></td>
+          <td><code>01HY0ASHT33GWW0C7DXRP114R4</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>9853.067</td>
+          <td>9953.067</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 09:12:39.634000+00:00</td>
+          <td><code>bd05066f-97f4-4b07-930b-740ac832a996</code></td>
+          <td><code>01HY0ASJ3YR7WW59XPHSNYN9F4</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>0.0</td>
+          <td>100.0</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 09:12:39.607000+00:00</td>
+          <td><code>f50d0778-fab9-47c1-bf7d-a23e9649e127</code></td>
+          <td><code>01HY0ASHM5KBHVVJ9MCPRCYRPJ</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>9100.908</td>
+          <td>9200.908</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+        <tr>
+          <td>2024-05-16 09:12:39.484000+00:00</td>
+          <td><code>eef98ede-4f70-4c62-8b8b-00b2bcec2ce2</code></td>
+          <td><code>01HY0ASHF2EDYWEJAVGNN2DSR2</code></td>
+          <td>CREDIT</td>
+          <td>MANUAL_ADDITION</td>
+          <td>ADD</td>
+          <td>100.0</td>
+          <td>100.25</td>
+          <td>200.25</td>
+          <td>Burst</td>
+          <td>Transactions within <1s of each other</td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top: 24px; color: #666">Generated by Calo Balance Log Analytics.</p>
+</body>
+</html>
